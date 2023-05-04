@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BalanzaJCR</title>
+    <link href="estilo.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+    <header>
+        <h1>B&Aacute;SCULA PARA FRUTA</h1>
+    </header>
+        <div id="panelgeneral">
+            <div id="barradecomandos">               
+                <input type="button" value="Limpiar" onclick="Limpiar();"/>
+                <input type="button" value="Pesar y calcular" onclick="Pesarycalcular();"/>
+                <input type="button" value="A&ntilde;adir" onclick="Añadir();"/>
+                <input type="button" value="Cesta" onclick="Cesta();"/>
+            </div>
+              <div id="selecciondefruta">
+                <table class="tabladefrutas">
+                    <tr>
+                        <td onmousedown="Press(this)" onmouseup="unPress(this);" onclick="Select(0);">
+                            <figure>
+                                <img  src="imagenes/aguacates.png" alt="Aguacates"/>
+                                <figcaption>Aguacates</figcaption>
+                              </figure>
+                        </td>
+                        <td  onmousedown="Press(this)" onmouseup="unPress(this);" onclick="Select(1);">
+                            <figure>
+                                <img  src="imagenes/arandanos.png" alt="Ar&Aacute;ndanos"/>
+                                <figcaption>Ar&aacute;ndanos</figcaption>
+                              </figure>
+                        </td>
+                        <td  onmousedown="Press(this)" onmouseup="unPress(this);" onclick="Select(2);">
+                            <figure>
+                                <img  src="imagenes/cerezas.png" alt="Cerezas"/>
+                                <figcaption>Cerezas</figcaption>
+                              </figure>
+                        </td>
+                        <td  onmousedown="Press(this)" onmouseup="unPress(this);" onclick="Select(3);">
+                            <figure>
+                                <img  src="imagenes/cocos.png" alt="Cocos"/>
+                                <figcaption>Cocos</figcaption>
+                              </figure>
+                        </td>
+                        <td  onmousedown="Press(this)" onmouseup="unPress(this);" onclick="Select(4);">
+                            <figure>
+                                <img  src="imagenes/fresas.png" alt="Fresas"/>
+                                <figcaption>Fresas</figcaption>
+                              </figure>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td  onmousedown="Press(this)" onmouseup="unPress(this);" onclick="Select(5);">
+                            <figure>
+                                <img  src="imagenes/kiwis.png" alt="Kiwis"/>
+                                <figcaption>Kiwis</figcaption>
+                              </figure>
+                        </td>
+                        <td  onmousedown="Press(this)" onmouseup="unPress(this);" onclick="Select(6);">
+                            <figure>
+                                <img  src="imagenes/limones.png" alt="Limones"/>
+                                <figcaption>Limones</figcaption>
+                              </figure>
+                        </td>
+                        <td  onmousedown="Press(this)" onmouseup="unPress(this);" onclick="Select(7);">
+                            <figure>
+                                <img  src="imagenes/manzanas.png" alt="Manzanas"/>
+                                <figcaption>Manzanas</figcaption>
+                              </figure>
+                        </td>
+                        <td  onmousedown="Press(this)" onmouseup="unPress(this);" onclick="Select(8);">
+                            <figure>
+                                <img  src="imagenes/naranjas.png" alt="Naranjas"/>
+                                <figcaption>Naranjas</figcaption>
+                              </figure>
+                        </td>
+                        <td  onmousedown="Press(this)" onmouseup="unPress(this);" onclick="Select(9);">
+                            <figure>
+                                <img  src="imagenes/papayas.png" alt="Papayas"/>
+                                <figcaption>Papayas</figcaption>
+                              </figure>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td  onmousedown="Press(this)" onmouseup="unPress(this);" onclick="Select(10);">
+                            <figure>
+                                <img  src="imagenes/peras.png" alt="Peras"/>
+                                <figcaption>Peras</figcaption>
+                              </figure>
+                        </td>
+                        <td  onmousedown="Press(this)" onmouseup="unPress(this);" onclick="Select(11);">
+                            <figure>
+                                <img  src="imagenes/pi&ntilde;as.png" alt="Pi&ntilde;as"/>
+                                <figcaption>Pi&ntilde;as</figcaption>
+                              </figure>
+                        </td>
+                        <td  onmousedown="Press(this)" onmouseup="unPress(this);" onclick="Select(12);">
+                            <figure>
+                                <img  src="imagenes/platanos.png" alt="Pl&aacute;tanos"/>
+                                <figcaption>Pl&aacute;tanos</figcaption>
+                              </figure>
+                        </td>
+                        <td  onmousedown="Press(this)" onmouseup="unPress(this);" onclick="Select(13);">
+                            <figure>
+                                <img  src="imagenes/sandias.png" alt="Sand&iacute;as"/>
+                                <figcaption>Sand&iacute;as</figcaption>
+                              </figure>
+                        </td>
+                        <td  onmousedown="Press(this)" onmouseup="unPress(this);" onclick="Select(14);">
+                            <figure>
+                                <img  src="imagenes/uvas.png" alt="Uvas"/>
+                                <figcaption>Uvas</figcaption>
+                              </figure>
+                        </td>
+                    </tr>
+                </table>
+                <br>
+                <div id="display">
+                    <table class="paneldeinformacion">
+                        <tr>
+                            <th class="articulo">
+                                Nuevo artículo
+                            </th>
+                            <th id="casilla1">
+                                
+                            </th>
+                        </tr>
+                        <tr>
+                            <th class="precio">
+                                Precio (€/Kg)
+                            </th>
+                            <th id="casilla2">
+                                
+                            </th>
+                        </tr>
+                        <tr>
+                            <th class="cantidad">
+                                Cantidad (Kg)
+                            </th>
+                            <th id="casilla3">
+                                
+                            </th>
+                        </tr>
+                        <tr>
+                            <th class="calcular">
+                                Calcular (€)
+                            </th>
+                            <th id="casilla4">
+                                
+                            </th>
+                        </tr>
+                        <tr>
+                            <th class="importe">
+                                Importe total (€)
+                            </th>
+                            <th id="casilla5">
+                                
+                            </th>
+                        </tr>
+                    </table>
+                </div>
+                <footer>
+                    <P>
+                        Supermercados JCR
+                    </P>
+                </footer>
+              </div>
+        </div>
+        <div id="ticket">
+            <div>
+                <h1>SUPERMERCADOS JCR</h1>
+            </div>
+            <div id="fechadelacompra">
+                <P>02/05/2023</P>
+            </div>
+            <div id="desglose">
+                <table class="conceptosticket">
+                    <thead class="titulosconceptos">
+                        <tr>
+                            <td>
+                                Artículo
+                            </td>
+                            <td>
+                                Precio (€/Kg)
+                            </td>                    
+                            <td>
+                                Cantidad (Kg)
+                            </td>                    
+                            <td>
+                                Importe (€)
+                            </td>
+                        </tr>
+                    </thead>
+                    <tbody id="ticketcompra">
+                        <!--NO PUEDES DEFINIR EL NÚMERO DE FILAS PORQUE ESO DEPENDERÁ DEL NÚMERO DE PRODUCTOS QUE ACUMULES PARA EL TICKET-->
+                    </tbody>
+                </table>
+                <table class="total">
+                    <tr>
+                        <td id="textototal">
+                            Total
+                        </td>
+                        <td id="totaltotal">
+                            
+                        </td>
+                    </tr>
+                    <!-- IMPORTE TOTAL -->
+                </table>
+            </div>
+            <div id="codigodebarras">
+                <figure>
+                    <img   class="codigo" src="imagenes/codigodebarras.png" alt="codigodebarras"/>
+                </figure>
+            </div>
+            <div>
+                <p>Gracias por su compra</p>
+            </div>
+        </div>
+</body>
+<script src="javascript.js" lang="javascript" type="text/javascript"></script>
+</html>
